@@ -3,7 +3,12 @@ pipeline {
     environment {
       PATH="/var/lib/jenkins/miniconda3/bin:$PATH"
     }
-
+  stages {
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
         stage('Build environment') {
             steps {
                 echo "Building virtualenv"
